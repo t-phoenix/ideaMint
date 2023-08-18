@@ -1,0 +1,122 @@
+.main-content {
+    width: 87.6vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.sub-content {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10%;
+    padding-inline: 20px;
+}
+
+.home-heading {
+    font-size: 60px;
+}
+
+.home-subheading {
+    font-size: 30px;
+}
+
+.home-content {
+    font-size: 20px;
+    align-items: start;
+}
+
+/* .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+
+.home-button {
+    border-radius: 20px;
+    height: 40px;
+    margin-inline: 30px;
+    padding-inline: 20px;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.single-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+    padding: 8px;
+    width: 33%;
+    height: 25vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 16px;
+}
+
+.token-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 12px;
+    padding: 12px;
+    width: 25%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #272e2e;
+    background-color: #272e2e;
+    border-radius: 16px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+}
+
+.function-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    margin: 24px;
+    padding: 8px;
+    width: 50%;
+    height: 60%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(92, 67, 67);
+    border-radius: 16px;
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(166, 166, 190);
+}
