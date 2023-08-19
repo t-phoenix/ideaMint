@@ -17,8 +17,8 @@ export default function Home() {
                 <h1 className='home-heading'>Hello HODLers !!</h1>
                 <h2 className='home-subheading'>Welcome to the IDEA MINT</h2>
                 <div>
-                    <button className='home-button' onClick={() => { navigate('/create') }}>Create your DAO</button>
-                    <button className='home-button' onClick={() => { navigate('/explorer') }}>Join a DAO</button>
+                    <button className='home-button' onClick={() => { navigate('/create') }}>MINT your IDEA</button>
+                    <button className='home-button' onClick={() => { navigate('/explorer') }}>Explore a NFTs</button>
                 </div>
             </div>
             <div className='sub-content home-content'>

@@ -1,4 +1,4 @@
-import { createCampaign, dashboard, logout, payment, profile, withdraw, glogo, rocket } from '../assets';
+import { createCampaign, dashboard, logout, payment, profile, withdraw, glogo, rocket, menu, money } from '../assets';
 
 export const navlinks = [
   {
@@ -7,25 +7,19 @@ export const navlinks = [
     link: '/explorer',
   },
   {
-    name: 'start',
-    imgUrl: logout,
+    name: 'Mint Idea',
+    imgUrl: withdraw,
     link: '/create',
   },
   {
-    name: 'Trxn',
-    imgUrl: withdraw,
-    link: '/transaction',
-  },
-  {
-    name: 'token',
-    imgUrl: payment,
-    link: '/token',
+    name: 'Collection',
+    imgUrl: profile,
+    link: '/collection',
 
   },
-
   {
     name: 'Learn',
-    imgUrl: profile,
+    imgUrl: payment,
     link: '/learn',
   },
 ];

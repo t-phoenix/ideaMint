@@ -6,6 +6,9 @@ import Navbar from './components/Navbar';
 import Sidebar from "./components/Sidebar";
 import Home from './pages/Home.js';
 import CreateScreen from './pages/CreateScreen';
+import IdeaExplorer from "./pages/IdeaExplorer";
+import CollectionScreen from "./pages/Collection";
+import LearnScreen from "./pages/Learn";
 // import TokenScreen from './pages/Token.js';
 
 // import TxnScreen from './pages/TxnScreen';
@@ -41,7 +44,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/explorer" element={<IdeaExplorer />} />
           <Route path="/create" element={<CreateScreen />} />
+          <Route path="/collection" element={<CollectionScreen />} />
+          <Route path="/learn" element={<LearnScreen />}/>
+          
           
         </Routes>
       </div>
