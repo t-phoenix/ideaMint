@@ -1,0 +1,40 @@
+.sidebar {
+    height: 100vh;
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-inline: 4%;
+    margin-top: 4%;
+    position:fixed;
+}
+
+.sidebar-nav {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+@media all and (max-width: 950px){
+    .sidebar {
+        height: 10vh;
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        backdrop-filter: blur(5px);
+        position: fixed;
+        margin-top: 0;
+    }
+    .sidebar-nav {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+}
+
+

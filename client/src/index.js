@@ -32,7 +32,7 @@ const w3mTheme = {
   // '--w3m-logo-image-url': mylogo,
   '--w3m-background-color': '#9bfb97',
   '--w3m-container-border-radius': '20px',
-  '--w3m-button-border-radius': '20px'
+  '--w3m-button-border-radius': '20px',
 
 }
 
