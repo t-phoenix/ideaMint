@@ -1,0 +1,12 @@
+.biginputBox {
+    margin: 5px;
+    width: 30vw; 
+    border-radius: 16px;
+    padding: 8px;
+}
+
+@media all and (max-width: 950px){
+    .biginputBox {
+        width: 50vw ;
+    }
+}
