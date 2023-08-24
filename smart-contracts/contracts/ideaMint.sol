@@ -1,43 +1,65 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract NFTMintingContract is ERC721 {
-    using SafeMath for uint256;
+contract IdeaMint is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
+    uint256 public mintingFee = 1000000000;
+    Counters.Counter private _tokenIdCounter;
 
-    address public owner;
-    uint256 public mintingFee;
-    uint256 public tokenIdCounter;
-
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        uint256 _initialMintingFee
-    ) ERC721(_name, _symbol) {
-        owner = msg.sender;
-        mintingFee = _initialMintingFee;
-        tokenIdCounter = 0;
-    }
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can call this function");
-        _;
-    }
+    constructor() ERC721("IdeaMint", "IDEA") {}
 
     function setMintingFee(uint256 _newFee) external onlyOwner {
         mintingFee = _newFee;
     }
 
-    function mintNFT() external payable {
+
+    function withdraw() public onlyOwner {
+        require(address(this).balance > 0, "No Funds to Withdraw");
+        payable(owner()).transfer(address(this).balance);
+    }
+
+    function safeMint(string memory uri) external payable {
         require(msg.value >= mintingFee, "Insufficient fee");
-        
-        tokenIdCounter++;
-        uint256 newTokenId = tokenIdCounter;
-        _mint(msg.sender, newTokenId);
-        
-        // Transfer the minting fee to the contract owner
-        payable(owner).transfer(msg.value);
+        _tokenIdCounter.increment();
+        uint256 tokenId = _tokenIdCounter.current();
+        _safeMint(msg.sender, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
+
+    // The following functions are overrides required by Solidity.
+
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
+        internal
+        override(ERC721, ERC721Enumerable)
+    {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
+    }
+
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721Enumerable, ERC721URIStorage)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 }

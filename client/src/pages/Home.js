@@ -1,12 +1,34 @@
 // import { Token } from '@thirdweb-dev/sdk';
-import React from 'react';
+import React, { useState } from 'react';
 // import DisplayCards from '../components/DisplayCards';
 // import { cards } from '../constants';
 import '../styles/homestyle.css';
 import { useNavigate } from 'react-router-dom';
+import { useContractRead } from 'wagmi';
+import { readContract } from '@wagmi/core'
+import { ideaMIntAddress, ideaMintABI } from '../constants/smartContract';
 
 export default function Home() {
     const navigate = useNavigate();
+    const [tokenSupply, setTokenSupply] = useState(0);
+    // const { data, isError, isLoading } = useContractRead({
+    //     address: ideaMIntAddress,
+    //     abi: ideaMintABI,
+    //     functionName: 'totalSupply',
+    // })
+
+    // console.log("Total Idea Mint NFTs:", data)
+    // console.log("Error while loading tokenSupply:", isError, isLoading)
+    
+    async function fetchtokenSupply(){
+        const supply = await readContract({
+            address: ideaMIntAddress,
+            abi: ideaMintABI,
+            functionName: 'totalSupply',
+          })
+          console.log("Idea Mint Contract have: ", Number(supply), " tokens");
+        setTokenSupply(Number(supply))
+    }
 
 
     return (
@@ -16,6 +38,11 @@ export default function Home() {
             <div className='sub-content'>
                 <h1 className='home-heading'>Hello HODLers !!</h1>
                 <h2 className='home-subheading'>Welcome to the IDEA MINT</h2>
+                <h3>Total NFTs Minted: {tokenSupply}</h3>
+                <button className='home-button' onClick={fetchtokenSupply}>🔃</button>
+
+
+
                 <div>
                     <button className='home-button' onClick={() => { navigate('/create') }}>MINT your IDEA</button>
                     <button className='home-button' onClick={() => { navigate('/explorer') }}>Explore a NFTs</button>

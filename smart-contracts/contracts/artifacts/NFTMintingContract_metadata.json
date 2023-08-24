@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.9+commit.e5eed63a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -417,17 +417,6 @@
 			}
 		],
 		"devdoc": {
-			"events": {
-				"Approval(address,address,uint256)": {
-					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
-				},
-				"ApprovalForAll(address,address,bool)": {
-					"details": "Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets."
-				},
-				"Transfer(address,address,uint256)": {
-					"details": "Emitted when `tokenId` token is transferred from `from` to `to`."
-				}
-			},
 			"kind": "dev",
 			"methods": {
 				"approve(address,uint256)": {
@@ -482,7 +471,7 @@
 		"compilationTarget": {
 			"smart-contracts/contracts/ideaMint.sol": "NFTMintingContract"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -591,11 +580,11 @@
 			]
 		},
 		"smart-contracts/contracts/ideaMint.sol": {
-			"keccak256": "0xf408c5abd0beae2b1ffb2fdbaf850ea90f7fcaa2779075538e4b7c491cd5150a",
+			"keccak256": "0x5c358da0f016369d73d3f27befcdef4516a573a1c7481b00ecd68d676b17c8e2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c4b4b0389ead75d4a6c2735e19cc0942c3f3b041c3958ca1eb8e4cfaec68d47d",
-				"dweb:/ipfs/QmPy3vEf1ZouFYrB77X5Rsmwo2m2dfjSX4Xc88CyiQxbkx"
+				"bzz-raw://3f0bb82174385708d9336a9b8acbb86d0ba14c6f22ed7e2c75e871b512b3a022",
+				"dweb:/ipfs/Qmb4rURTynUEymcYNf793Kp95n2YTUsiTUeGAApoQw3Y1C"
 			]
 		}
 	},
