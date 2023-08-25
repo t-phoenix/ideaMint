@@ -11,7 +11,7 @@ import { Web3Modal } from '@web3modal/react'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 import { polygonMumbai,  polygon, xdcTestnet, xdc } from 'wagmi/chains'
 
-const chains = [xdcTestnet, xdc, polygonMumbai, polygon]
+const chains = [xdcTestnet]
 
 const projectId = 'e8c0411f89c933ea0d0a53571d544509'
 
