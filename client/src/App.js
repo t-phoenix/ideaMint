@@ -28,7 +28,7 @@ function App() {
         <Route path="/explorer" element={<IdeaExplorer />} />
           <Route path="/create" element={<CreateScreen />} />
           <Route path="/collection" element={<CollectionScreen />} />
-          <Route path="/learn" element={<LearnScreen />}/>
+          <Route path="/guide" element={<LearnScreen />}/>
       </Routes>
       </div>
     </div>

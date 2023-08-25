@@ -18,9 +18,9 @@ export const navlinks = [
 
   },
   {
-    name: 'Learn',
+    name: 'Guide',
     imgUrl: payment,
-    link: '/learn',
+    link: '/guide',
   },
 ];
 

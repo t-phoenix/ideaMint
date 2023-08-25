@@ -1,6 +1,7 @@
  export const ideaMIntAddress = '0x1A03afA90B371764E588E34dEE9377bE52F424e5';
+ //polygon-testnet
 // export const ideaMIntAddress = "0x6c7a2fd61DEF189505ED0C97A20D80705df1E29D";
-
+//xdc-testnet
 
 export const ideaMintABI = [
 	{
