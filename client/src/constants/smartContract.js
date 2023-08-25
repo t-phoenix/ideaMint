@@ -1,7 +1,7 @@
- export const ideaMIntAddress = '0x1A03afA90B371764E588E34dEE9377bE52F424e5';
- //polygon-testnet
-// export const ideaMIntAddress = "0x6c7a2fd61DEF189505ED0C97A20D80705df1E29D";
+//polygon-testnet
+// export const ideaMIntAddress = '0x1A03afA90B371764E588E34dEE9377bE52F424e5';
 //xdc-testnet
+export const ideaMIntAddress = "0x1183715aF46345724d75454dF4a1326403dF0F5c";
 
 export const ideaMintABI = [
 	{
@@ -363,7 +363,13 @@ export const ideaMintABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_newFee",
+				"type": "uint256"
+			}
+		],
 		"name": "setMintingFee",
 		"outputs": [],
 		"stateMutability": "nonpayable",
